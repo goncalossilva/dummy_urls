@@ -1,0 +1,31 @@
+Description:
+    Creates dummy urls for the application. It generates groups of urls,
+    composed of one GET, one POST, one PUT and one DELETE requests which hit
+    the default routes for every model.
+    
+    The amount of groups of urls created for each model depends on the amount
+    of records created by Dummy's data generator (yes, this generator depends on
+    it). By default, it uses 10 as a divisor but this value can be user-defined.
+    For instance, if Dummy's data generator created 20 records for a given model
+    and Dummy's route generator is using the default divisor (10), it will generate
+    2 groups of routes for that model.
+
+Example:
+    `rails generate dummy:urls`
+
+    Creates urls stored in YAML files for every model.
+    
+        Routes: test/dummy/urls/*
+        Dummyfile: test/dummy/Dummyfile
+        
+    `rails generate dummy:urls --divisor=3`
+
+    Creates urls for every model using a 3 divisor, instead of the default (10).
+    
+    `rails generate dummy:urls --manual-amounts`
+    
+    Asks for the amount of groups of urls to generate for each model.
+
+    `rails generate dummy:urls --output-folder=test/awesome_dummy`
+    
+    Creates urls for every model and places them in test/awesome_dummy/urls.

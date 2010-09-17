@@ -1,0 +1,25 @@
+<%= "# '#{@model_name}' urls generated automatically by dummy at #{Time.now.strftime("%H:%M %m/%d/%Y")} (#{@url_amount} groups of urls)." %>
+<% for i in 1..@url_amount do %>
+<% id = generate_id(@model_name) -%>
+get_<%= i %>:
+  type: get
+  url: /<%= @model_name %>/<%= id %>
+
+post_<%= i %>:
+  type: post
+  url: /<%= @model_name %>/new
+  params:
+    :<%= @model_name.singularize %>:
+      <%= generate_data(@model_name).map { |field, value| "#{field}: #{value}" }.join("\n      ") %>
+
+put_<%= i %>:
+  type: put
+  url: /<%= @model_name %>/<%= id %>
+  params:
+    :<%= @model_name.singularize %>:
+      <%= generate_data(@model_name).map { |field, value| "#{field}: #{value}" }.join("\n      ") %>
+
+delete_<%= i %>:
+  type: delete
+  url: /<%= @model_name %>/<%= id %>
+<% end %>
