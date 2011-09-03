@@ -1,8 +1,8 @@
 Gem::Specification.new do |gem|
   gem.name              = "dummy_urls"
-  gem.version           = "0.9"
+  gem.version           = "0.9.1"
   gem.platform          = Gem::Platform::RUBY
-  gem.authors           = ["Gonçalo Silva"]
+  gem.authors           = ["Goncalo Silva"]
   gem.email             = ["goncalossilva@gmail.com"]
   gem.homepage          = "http://github.com/goncalossilva/dummy_urls"
   gem.summary           = "Generates dummy URLs for Rails 3 applications"
